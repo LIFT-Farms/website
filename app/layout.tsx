@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@fontsource-variable/geist";
 import "./globals.css";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/next"
 
 const siteUrl = "https://farm.liftgroup.online";
 
@@ -58,6 +59,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col antialiased">
         <Toaster position="top-right" richColors />
         {children}
+        <Analytics />
       </body>
     </html>
   );
