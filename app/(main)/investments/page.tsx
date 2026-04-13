@@ -88,8 +88,8 @@ export default function Investments() {
                         </motion.p>
 
                         <motion.div variants={fadeIn}>
-                            <Link href='/' className="inline-flex items-center gap-2 bg-primary-dark text-white px-5 py-4 rounded-md text-[.8rem] leading-[1rem] mt-5 hover:bg-primary transition-colors duration-200">
-                                <span>Explore Oppurtunities</span>
+                            <Link href='#investments' className="inline-flex items-center gap-2 bg-primary-dark text-white px-5 py-4 rounded-md text-[.8rem] leading-[1rem] mt-5 hover:bg-primary transition-colors duration-200">
+                                <span>Partner With Us</span>
                                 <span><ArrowRight className="w-3 h-3"/></span>
                             </Link>
                         </motion.div>
@@ -213,7 +213,7 @@ export default function Investments() {
                 viewport={{ once: true, amount: 0.2 }}
                 variants={staggerContainer}
             >
-                <div className="w-[90%] mx-auto">
+                <div id='investments' className="w-[90%] mx-auto">
                     <div className="w-full grid grid-cols-1 lg:grid-cols-2 shadow-xl rounded-md overflow-hidden">
                         <div className="bg-primary-dark h-full flex items-center justify-center p-6 md:p-10 rounded-tl-md rounded-tr-md lg:rounded-tr-none lg:rounded-bl-md">
                             <motion.div variants={staggerContainer}>

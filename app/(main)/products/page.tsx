@@ -20,8 +20,8 @@ const Produce = ({ image, title, badge_content, description, packaging, variants
                     <h4 className="font-manrope font-bold text-[1.5rem] leading-[2rem] text-primary-dark">{title}</h4>
                     <Badge className="font-inter font-bold text-[.5rem] leading-[0.6rem] tracking-[0.02rem] py-3 text-tertiary-dark-2 bg-tertiary-light-2 px-2 uppercase">{badge_content}</Badge>
                 </div>
-                <p className="mt-3 font-inter font-light text-[1.05rem] leading-[1.4rem] text-gray">{description}</p>
-                <p className="mt-6 flex items-center gap-x-3 mt-auto">
+                <p className="mt-3 font-inter font-light text-[1.05rem] leading-[1.4rem] text-gray mb-3">{description}</p>
+                <p className="flex items-center gap-x-3 mt-auto">
                     <ShoppingBag className="w-4 h-4 text-tertiary-dark-3" />
                     <span className="font-inter font-bold text-[0.75rem] leading-[1rem] text-tertiary-dark-3">Packaging: {packaging}</span>
                 </p>
@@ -112,43 +112,17 @@ export default function Products() {
     });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-    const handleOrderSubmit = async (e: React.FormEvent) => {
+    const handleOrderSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus("loading");
         
-        try {
-            const response = await fetch("/api/send", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    type: "order",
-                    data: orderFormData
-                }),
-            });
-
-            if (!response.ok) {
-                const contentType = response.headers.get("content-type");
-                if (contentType && contentType.includes("application/json")) {
-                    const err = await response.json();
-                    throw new Error(err.error || "Failed to send order request");
-                } else {
-                    const text = await response.text();
-                    console.error("Non-JSON error response:", text);
-                    throw new Error("Server returned an invalid response. Please try again later.");
-                }
-            }
-
-            toast.success("Order request sent! Our sales team will follow up with an invoice.");
-            setOrderFormData({ name: "", email: "", product: "Stone-Free Rice", quantity: "", message: "" });
-            setStatus("idle");
-            setTimeout(() => {
-                setIsOrderModalOpen(false);
-            }, 2000);
-        } catch (error: any) {
-            console.error("Submission error:", error);
-            toast.error(error.message || "An unexpected error occurred.");
-            setStatus("idle");
-        }
+        const message = `Hello, I would like to place an order.\n\n*Name:* ${orderFormData.name}\n*Email:* ${orderFormData.email}\n*Product:* ${orderFormData.product}\n*Quantity:* ${orderFormData.quantity}\n*Notes:* ${orderFormData.message || "None"}`;
+        
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/32498410963?text=${encodedMessage}`, '_blank');
+        
+        toast.success("Opening WhatsApp...");
+        setOrderFormData({ name: "", email: "", product: "Stone-Free Rice", quantity: "", message: "" });
+        setIsOrderModalOpen(false);
     };
 
     return (
@@ -190,16 +164,24 @@ export default function Products() {
                         <span className="text-tertiary-dark-3 font-inter font-medium text-[0.5rem] leading-[1rem] tracking-[0.075rem] uppercase">Natural &amp; Raw</span>
                     </motion.div>
 
-                    <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10" variants={staggerContainer}>
-                        <Produce image='/assets/images/farm-produce5.webp' title='Stone-Free Rice' description='Long-grain parboiled rice, meticulously cleaned and polished. Sustainably grown in our river-fed fields.' badge_content='Bulk Available' packaging='25kg, 50kg bags' variants={fadeIn} />
-                        <Produce image='/assets/images/farm-produce4.webp' title='Hybrid Maize' description='High-yield yellow and white maize. Dried to optimal moisture levels for long shelf life and nutrition.' badge_content="Farm Direct" packaging='100kg Jute bags' />
-                        <Produce image='/assets/images/farm-produce2.webp' title='Premium Peppers' description='A blend of Scotch Bonnet and Habanero varieties. Hand-picked for maximum heat and aromatic flavor profile..' badge_content='Farm Direct' packaging='Small crates / Retail bags' variants={fadeIn} />
-                        <Produce image='/assets/images/farm-produce3.webp' title='Farm Fresh Eggs' description='Organic, high-protein eggs from healthy free-range poultry. Collected daily for peak freshness.' badge_content='Free Range' packaging='25kg, 50kg bags' variants={fadeIn} />
-                        <Produce image='/assets/images/farm-produce.webp' title='Sweet Potatoes' description='Rich in fiber and essential vitamins, harvested from our nutrient-dense, organic soil.' badge_content='Nutrient Dense' packaging='25kg, 50kg Mesh bags' variants={fadeIn} />
-                        <Produce image='/assets/images/farm-produce4.webp' title='Fresh Ginger' description='High-grade, aromatic ginger root. Expertly cleaned and prepared for local and export markets.' badge_content='Premium Grade' packaging='40kg Jute bags' variants={fadeIn} />
-                    </motion.div>
+                    <div className="flex flex-col items-center">
+                        <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10" variants={staggerContainer}>
+                            <Produce image='/assets/images/farm-produce5.webp' title='Stone-Free Rice' description='Long-grain parboiled rice, meticulously cleaned and polished. Sustainably grown in our river-fed fields.' badge_content='Bulk Available' packaging='25kg, 50kg bags' variants={fadeIn} />
+                            <Produce image='/assets/images/farm-produce4.webp' title='Hybrid Maize' description='High-yield yellow and white maize. Dried to optimal moisture levels for long shelf life and nutrition.' badge_content="Farm Direct" packaging='100kg Jute bags' />
+                            <Produce image='/assets/images/farm-produce2.webp' title='Premium Peppers' description='A blend of Scotch Bonnet and Habanero varieties. Hand-picked for maximum heat and aromatic flavor profile..' badge_content='Farm Direct' packaging='Small crates / Retail bags' variants={fadeIn} />
+                            <Produce image='/assets/images/farm-produce3.webp' title='Farm Fresh Eggs' description='Organic, high-protein eggs from healthy free-range poultry. Collected daily for peak freshness.' badge_content='Free Range' packaging='25kg, 50kg bags' variants={fadeIn} />
+                            <Produce image='/assets/images/farm-produce.webp' title='Sweet Potatoes' description='Rich in fiber and essential vitamins, harvested from our nutrient-dense, organic soil.' badge_content='Nutrient Dense' packaging='25kg, 50kg Mesh bags' variants={fadeIn} />
+                            <Produce image='/assets/images/farm-produce4.webp' title='Fresh Ginger' description='High-grade, aromatic ginger root. Expertly cleaned and prepared for local and export markets.' badge_content='Premium Grade' packaging='40kg Jute bags' variants={fadeIn} />
+                        </motion.div>
+                        <button 
+                            onClick={() => setIsOrderModalOpen(true)}
+                            className="mt-10 bg-gray-lighter-2 border-gray-lighter-3 text-primary-dark px-8 py-4 rounded-md font-inter font-medium text-[1rem] leading-[1rem] tracking-[0.075rem] uppercase hover:scale-105 transition-transform duration-200 cursor-pointer"
+                        >
+                            Place An Order
+                        </button>
+                    </div>
 
-                    <motion.div className="mission mt-16 md:mt-[13rem] w-full h-auto md:h-[18rem] bg-primary-dark rounded-lg p-8 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0" variants={scaleIn}>
+                    <motion.div className="mission mt-10 md:mt-[5rem] w-full h-auto md:h-[18rem] bg-primary-dark rounded-lg p-8 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0" variants={scaleIn}>
                         <div className="w-full md:basis-[70%]">
                             <h4 className="font-manrope font-[900] text-[1.5rem] md:text-[2rem] text-white leading-[2rem]">Processing with Purpose</h4>
                             <p className="w-full md:w-[55%] mt-3 font-inter font-light text-[1rem] leading-[1.9rem] text-primary-lighter">Every LiFT product undergoes rigorous quality checks to ensure that the natural goodness of the farm is preserved in every bag.</p>
@@ -274,7 +256,7 @@ export default function Products() {
                                 onClick={() => setIsOrderModalOpen(true)}
                                 className="mt-10 bg-gray-lighter-2 border-gray-lighter-3 text-primary-dark px-8 py-4 rounded-md font-inter font-medium text-[1rem] leading-[1rem] tracking-[0.075rem] uppercase hover:scale-105 transition-transform duration-200 cursor-pointer"
                             >
-                                Order Online
+                                Place An Order
                             </button>
                         </div>
                     </div>

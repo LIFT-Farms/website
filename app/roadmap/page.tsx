@@ -63,7 +63,7 @@ const links = [
     { path: '/about', label: 'About' },
     { path: '#ecosystem', label: 'Ecosystem' },
     { path: '#impact', label: 'Impact' },
-    { path: '/investments', label: 'Partner' },
+    { path: '/investments', label: 'Investments' },
     { path: '/roadmap', label: 'Roadmap' },
 ]
 
@@ -113,14 +113,13 @@ export default function Roadmap() {
                             Transforming Futures.
                         </motion.h3>
                         <motion.p 
-                            className="mt-6 w-full md:w-[70%] font-inter font-light text-[1rem] sm:text-[1.2rem] md:text-[1.5rem] leading-[1.6rem] md:leading-[2.63rem] text-gray text-center"
+                            className="mt-6 w-full md:w-[75%] font-inter font-light text-[1rem] sm:text-[1.2rem] md:text-[1.5rem] leading-[1.6rem] md:leading-[2.63rem] text-gray text-center"
                             variants={fadeIn}
                         >
                             Lift Group is a purpose-driven organization creating impact through agriculture, education, and economic development initiatives across Sierra Leone and beyond.
                         </motion.p>
                         <motion.div className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto" variants={fadeIn}>
-                            <Button className="w-full sm:w-auto font-inter font-medium text-[1rem] md:text-[1.2rem] py-3 px-6 h-auto">Explore Our Work</Button>
-                            <Button className="w-full sm:w-auto font-inter font-medium text-[1rem] md:text-[1.2rem] py-3 px-6 h-auto text-primary-dark bg-transparent border border-primary-dark hover:bg-primary-dark/5">Partner With Us</Button>
+                            <Link href='/investments#investments' className="rounded-md w-full sm:w-auto font-inter font-medium text-[1rem] md:text-[1.2rem] py-3 px-6 h-auto text-primary-dark bg-transparent border border-primary-dark hover:bg-primary-dark/5">Partner With Us</Link>
                         </motion.div>
                     </div>
                 </div>
