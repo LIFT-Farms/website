@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "LiFT Farms",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/favicon.png",
         width: 1200,
         height: 630,
         alt: "LiFT Farms — Sustainable Innovation, From Soil to Soul",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "LiFT Farms | Sustainable Innovation, From Soil to Soul",
     description:
       "We integrate modern sustainable techniques with deep community engagement to transform agriculture in Sierra Leone.",
-    images: ["/og-image.jpg"],
+    images: ["/favicon.png"],
   },
 };
 
