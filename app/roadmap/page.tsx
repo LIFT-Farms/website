@@ -228,7 +228,7 @@ export default function Roadmap() {
 
             <motion.section 
                 id="ecosystem"
-                className="bg-background py-16 md:py-30 overflow-x-hidden"
+                className="bg-background py-10 md:py-20 overflow-x-hidden"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
