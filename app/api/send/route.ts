@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     let emailHtml = '';
     let subject = '';
-    let to = process.env.DEFAULT_EMAIL || 'hello@liftfarms.sl';
+    let to = process.env.DEFAULT_EMAIL;
 
     switch (type) {
       case 'contact':
@@ -26,7 +26,6 @@ export async function POST(request: Request) {
       case 'investment':
         emailHtml = await render(React.createElement(InvestmentEmail, data));
         subject = `New Investment Enquiry from ${data.institution || data.fullname}`;
-        // to = 'invest@liftfarms.com';
         break;
       case 'order':
         emailHtml = await render(React.createElement(OrderEmail, data));

@@ -47,7 +47,7 @@ export const Footer = () => {
                             <Link href='/investments'>Partnership</Link>
                         </li>
                         <li>
-                            <Link href='https://wa.me/+32498410963?text=hello' target='_blank'>Whatsapp Support</Link>
+                            <Link href='https://wa.me/+23278362263?text=hello' target='_blank'>Whatsapp Support</Link>
                         </li>
                         <li>
                             <Link href='/contact'>Contact Info</Link>

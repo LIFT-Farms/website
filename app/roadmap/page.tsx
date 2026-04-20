@@ -335,7 +335,7 @@ export default function Roadmap() {
                                         <Mail className="w-5 h-5"/>
                                         <span>Email Our Team</span>
                                     </Link>
-                                    <Link href='https://wa.me/+32498410963?text=Hello, I would like to partner with LiFT Group' target='_blank' className="rounded-md inline-block w-full sm:w-auto font-inter font-medium text-[1rem] sm:text-[1.1rem] md:text-[1.27rem] py-6 md:py-7 px-6 bg-tertiary text-tertiary-medium hover:bg-tertiary/90 flex items-center justify-center gap-x-2 transition-transform hover:scale-105 active:scale-95">
+                                    <Link href='https://wa.me/+23278362263?text=Hello, I would like to partner with LiFT Group' target='_blank' className="rounded-md inline-block w-full sm:w-auto font-inter font-medium text-[1rem] sm:text-[1.1rem] md:text-[1.27rem] py-6 md:py-7 px-6 bg-tertiary text-tertiary-medium hover:bg-tertiary/90 flex items-center justify-center gap-x-2 transition-transform hover:scale-105 active:scale-95">
                                         <MessageSquareText className="w-5 h-5"/>
                                         <span>Send Us A Text</span>
                                     </Link>

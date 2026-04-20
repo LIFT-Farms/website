@@ -223,17 +223,17 @@ export default function Investments() {
                                 <motion.ul className="mt-7 space-y-3" variants={fadeIn}>
                                     <li className="flex items-center gap-x-3">
                                         <img src='/assets/envelope.webp' alt='envelope' className="w-4 h-4 object-contain" loading="lazy" />
-                                        <span className="font-inter font-medium text-white text-[1rem] leading-[1.94rem]">invest@liftfarms.com</span>
+                                        <span className="font-inter font-medium text-white text-[1rem] leading-[1.94rem]">liftumbrellagroup@gmail.com</span>
                                     </li>
                                     <li className="flex items-center gap-x-3">
                                         <img src='/assets/map.webp' alt='map' className="w-5 h-5 object-contain -ml-[0.2rem]" loading="lazy" />
-                                        <span className="font-inter font-medium text-white text-[1rem] leading-[1.94rem]">Freetown, Sierra Leone</span>
+                                        <span className="font-inter font-medium text-white text-[1rem] leading-[1.94rem]">Makeni & Kono, Sierra Leone</span>
                                     </li>
                                 </motion.ul>
 
                                 <motion.div className="font-inter uppercase text-gray-light/30 text-[.9rem] leading-[1.94rem] mt-10 md:mt-12 pt-10 border-t border-gray-light/30" variants={fadeIn}>
                                     <p className="font-medium text-white text-[0.8rem] leading-[1.32rem]">Compliance Status</p>
-                                    <p className="mt-2 font-light text-white text-[0.8rem] leading-[1.32rem]">Fully registered with the Sierra Leone Investment and Export Promotion Agency (SLIEPA).</p>
+                                    <p className="mt-2 font-light text-white text-[0.8rem] leading-[1.32rem]">Fully registered in the Sierra Leone government.</p>
                                 </motion.div>
                             </motion.div>
                         </div>

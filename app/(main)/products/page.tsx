@@ -171,7 +171,7 @@ export default function Products() {
                             <Produce image='/assets/images/farm-produce2.webp' title='Premium Peppers' description='A blend of Scotch Bonnet and Habanero varieties. Hand-picked for maximum heat and aromatic flavor profile..' badge_content='Farm Direct' packaging='Small crates / Retail bags' variants={fadeIn} />
                             <Produce image='/assets/images/farm-produce3.webp' title='Farm Fresh Eggs' description='Organic, high-protein eggs from healthy free-range poultry. Collected daily for peak freshness.' badge_content='Free Range' packaging='25kg, 50kg bags' variants={fadeIn} />
                             <Produce image='/assets/images/farm-produce.webp' title='Sweet Potatoes' description='Rich in fiber and essential vitamins, harvested from our nutrient-dense, organic soil.' badge_content='Nutrient Dense' packaging='25kg, 50kg Mesh bags' variants={fadeIn} />
-                            <Produce image='/assets/images/farm-produce4.webp' title='Fresh Ginger' description='High-grade, aromatic ginger root. Expertly cleaned and prepared for local and export markets.' badge_content='Premium Grade' packaging='40kg Jute bags' variants={fadeIn} />
+                            <Produce image='/assets/images/farm-produce1.webp' title='Fresh Ginger' description='High-grade, aromatic ginger root. Expertly cleaned and prepared for local and export markets.' badge_content='Premium Grade' packaging='40kg Jute bags' variants={fadeIn} />
                         </motion.div>
                         <button 
                             onClick={() => setIsOrderModalOpen(true)}
@@ -201,7 +201,7 @@ export default function Products() {
             </motion.section>
 
             <motion.section 
-                className="py-16 md:py-25 bg-background-light"
+                className="py-0 bg-background-light"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}

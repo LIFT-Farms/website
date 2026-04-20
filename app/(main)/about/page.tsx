@@ -243,7 +243,7 @@ export default function About() {
                         </motion.div>
                     </div>
                     <motion.div 
-                        className='mt-16 md:mt-40 rounded-md bg-white font-manrope font-[900] text-[1.1rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[3rem] uppercase flex flex-wrap justify-between items-center px-4 sm:px-6 md:px-13 py-8 md:h-[12.8rem] text-[#DFDFDD] gap-2 md:gap-4'
+                        className='mt-16 md:mt-40 rounded-md bg-white font-manrope font-[900] text-[1.1rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[3rem] uppercase flex flex-wrap justify-between items-center px-2 sm:px-6 md:px-13 py-8 md:h-[12.8rem] text-tertiary gap-2 md:gap-4'
                         variants={fadeIn}
                     >
                         <span>Integrity</span>

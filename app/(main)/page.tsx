@@ -49,7 +49,7 @@ export default function Home() {
         visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" } }
     };
 
-    const MotionLink = motion(Link);
+    const MotionLink = motion.create(Link);
 
     const [isPartnerModalOpen, setIsPartnerModalOpen] = useState(false);
     const [partnerFormData, setPartnerFormData] = useState({

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import "@fontsource-variable/geist";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/next"
