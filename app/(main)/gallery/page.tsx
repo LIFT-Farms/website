@@ -163,7 +163,7 @@ export default function Gallery() {
                         <GalleryItem src='/assets/images/produce8.webp' alt='Black Pepper' overlay className='col-span-1 md:col-span-2' description='Black Pepper' variants={itemFadeIn} />
                         <GalleryItem src='/assets/images/produce2.webp' alt='Eggs' overlay description='Eggs' variants={itemFadeIn} />
                         <GalleryItem src='/assets/images/produce3.webp' alt='Red Pepper' overlay description='Red Pepper' variants={itemFadeIn} />
-                        <GalleryItem src='/assets/images/produce4.webp' alt='Yam' overlay description='Yam' variants={itemFadeIn} />
+                        <GalleryItem src='/assets/images/produce4.jpg' alt='Beans' overlay description='Beans' variants={itemFadeIn} />
                         <GalleryItem src='/assets/images/produce5.webp' alt='Tomatoes' overlay description='Tomatoes' variants={itemFadeIn} />
                         <GalleryItem src='/assets/images/produce6.webp' alt='Rice' overlay description='Rice' variants={itemFadeIn} />
                         <GalleryItem src='/assets/images/produce7.webp' alt='Cassava' overlay description='Cassava' variants={itemFadeIn} />
@@ -172,7 +172,7 @@ export default function Gallery() {
                 </div>
             </section>
 
-            <section className='py-16 md:py-35'>
+            <section className='py-16 md:py-35 md:pb-20'>
                 <div className='w-[90%] mx-auto'>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-3'>
                         <motion.div 
