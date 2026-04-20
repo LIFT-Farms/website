@@ -331,11 +331,11 @@ export default function Roadmap() {
                                 <h3 className="font-manrope font-bold text-[1.8rem] sm:text-[2.2rem] md:text-[3.5rem] leading-[120%] md:leading-[4.2rem]">Ready to Build the Future?</h3>
                                 <p className="mt-4 font-inter font-light text-[0.95rem] sm:text-[1.1rem] md:text-[1.29rem] leading-[1.5rem] sm:leading-[1.6rem] md:leading-[2.2rem] opacity-90">Join us in building sustainable impact. Our team is ready to connect and explore how we can move forward together.</p>
                                 <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                                    <Link href='mailto:info@liftgroup.online' target="_blank" className="rounded-md inline-block w-full sm:w-auto font-inter font-medium text-[1rem] sm:text-[1.1rem] md:text-[1.27rem] py-6 md:py-7 px-6 bg-white text-primary-dark hover:bg-gray-100 flex items-center justify-center gap-x-2 transition-transform hover:scale-105 active:scale-95">
+                                    <Link href='mailto:info@liftgroup.online' target="_blank" className="rounded-md block w-full sm:w-auto font-inter font-medium text-[1rem] sm:text-[1.1rem] md:text-[1.27rem] py-6 md:py-7 px-6 bg-white text-primary-dark hover:bg-gray-100 flex items-center justify-center gap-x-2 transition-transform hover:scale-105 active:scale-95">
                                         <Mail className="w-5 h-5"/>
                                         <span>Email Our Team</span>
                                     </Link>
-                                    <Link href='https://wa.me/+23278362263?text=Hello, I would like to partner with LiFT Group' target='_blank' className="rounded-md inline-block w-full sm:w-auto font-inter font-medium text-[1rem] sm:text-[1.1rem] md:text-[1.27rem] py-6 md:py-7 px-6 bg-tertiary text-tertiary-medium hover:bg-tertiary/90 flex items-center justify-center gap-x-2 transition-transform hover:scale-105 active:scale-95">
+                                    <Link href='https://wa.me/+23278362263?text=Hello, I would like to partner with LiFT Group' target='_blank' className="rounded-md block w-full sm:w-auto font-inter font-medium text-[1rem] sm:text-[1.1rem] md:text-[1.27rem] py-6 md:py-7 px-6 bg-tertiary text-tertiary-medium hover:bg-tertiary/90 flex items-center justify-center gap-x-2 transition-transform hover:scale-105 active:scale-95">
                                         <MessageSquareText className="w-5 h-5"/>
                                         <span>Send Us A Text</span>
                                     </Link>
