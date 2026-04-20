@@ -59,7 +59,7 @@ export default function Gallery() {
                     </motion.div>
                 </div>
             </section>
-            <section className="py-12 md:py-20">
+            <section className="py-12 pt-5 md:py-20">
                 <div className="w-[90%] mx-auto">
                     <motion.h4 
                         initial="hidden"
@@ -172,7 +172,7 @@ export default function Gallery() {
                 </div>
             </section>
 
-            <section className='py-16 md:py-35 md:pb-20'>
+            <section className='py-16 md:py-35 pb-10'>
                 <div className='w-[90%] mx-auto'>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-3'>
                         <motion.div 
