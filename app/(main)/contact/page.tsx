@@ -151,7 +151,7 @@ export default function Contact() {
                                         </div>
                                         <div>
                                             <h5 className="font-inter font-bold text-[1rem] leading-[1.8rem] text-white">Message us on WhatsApp</h5>
-                                            <p className="-mt-1 font-inter font-light text-[0.9rem] leading-[1.6rem] text-primary-lighter/80">+32-498-410-963</p>
+                                            <p className="-mt-1 font-inter font-light text-[0.9rem] leading-[1.6rem] text-primary-lighter/80">+232-783-622-63</p>
                                         </div>
                                     </div>
                                     <div>
