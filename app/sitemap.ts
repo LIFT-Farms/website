@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = "https://farm.liftgroup.online";
+import { SITE_URL as siteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
