@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LiFT Farms Website
 
-## Getting Started
+Website for [LiFT Farms](https://farm.liftgroup.online), built with Next.js and deployed on Vercel.
 
-First, run the development server:
+## Setup
+
+Requires Node.js 20.9 or newer.
 
 ```bash
+npm install
+cp .env.example .env   # then fill in the values below
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other commands: `npm run build` (production build), `npm run start` (serve the build), `npm run lint`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment variables
 
-## Learn More
+The contact, investment and order forms send emails over SMTP (`app/api/send/route.ts`). Set these in `.env` locally and in the Vercel project settings for production.
 
-To learn more about Next.js, take a look at the following resources:
+| Variable        | Description                                  |
+| --------------- | -------------------------------------------- |
+| `SMTP_HOST`     | SMTP server hostname                         |
+| `SMTP_PORT`     | SMTP port, e.g. `465` or `587`               |
+| `SMTP_SECURE`   | `true` for port 465, `false` otherwise       |
+| `SMTP_USER`     | SMTP username                                |
+| `SMTP_PASS`     | SMTP password                                |
+| `SMTP_FROM`     | Sender address on outgoing emails            |
+| `DEFAULT_EMAIL` | Inbox that receives form submissions         |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Don't commit `.env`; it's git-ignored.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Adding a page
 
-## Deploy on Vercel
+1. Create `app/(main)/<name>/page.tsx`.
+2. Add a `layout.tsx` next to it that sets the page's title and description with `pageMetadata()` from `lib/seo.ts`.
+3. Add the route to `app/sitemap.ts`, and to the nav links in `lib/constant.ts` if needed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pushing to `main` deploys to Vercel. The Vercel project's Framework Preset must be **Next.js**.
